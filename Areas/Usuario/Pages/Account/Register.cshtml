@@ -1,0 +1,13 @@
+@* Las paginas no dependen de los controllers *@
+@* Las vistas dependen de los controllers *@
+@page "/Usuario/Register/{data?}"
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<h5>@Model.Message</h5>
+
+
