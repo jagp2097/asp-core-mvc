@@ -21,7 +21,8 @@ namespace usuarios.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VARCHAR")
+                        .HasMaxLength(256);
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -32,7 +33,7 @@ namespace usuarios.Data.Migrations
                         .HasMaxLength(256);
 
                     b.Property<string>("NormalizedName")
-                        .HasColumnType("TEXT")
+                        .HasColumnType("VARCHAR")
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
@@ -58,7 +59,8 @@ namespace usuarios.Data.Migrations
 
                     b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VARCHAR")
+                        .HasMaxLength(256);
 
                     b.HasKey("Id");
 
@@ -70,7 +72,8 @@ namespace usuarios.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VARCHAR")
+                        .HasMaxLength(256);
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("INTEGER");
@@ -90,14 +93,14 @@ namespace usuarios.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasColumnType("TEXT")
+                        .HasColumnType("VARCHAR")
                         .HasMaxLength(256);
 
                     b.Property<string>("NormalizedUserName")
-                        .HasColumnType("TEXT")
+                        .HasColumnType("VARCHAR")
                         .HasMaxLength(256);
 
                     b.Property<string>("PasswordHash")
@@ -135,7 +138,7 @@ namespace usuarios.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("ClaimType")
                         .HasColumnType("TEXT");
@@ -145,7 +148,8 @@ namespace usuarios.Data.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VARCHAR")
+                        .HasMaxLength(256);
 
                     b.HasKey("Id");
 
@@ -169,7 +173,8 @@ namespace usuarios.Data.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VARCHAR")
+                        .HasMaxLength(256);
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -181,10 +186,12 @@ namespace usuarios.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VARCHAR")
+                        .HasMaxLength(256);
 
                     b.Property<string>("RoleId")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VARCHAR")
+                        .HasMaxLength(256);
 
                     b.HasKey("UserId", "RoleId");
 
@@ -196,7 +203,8 @@ namespace usuarios.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VARCHAR")
+                        .HasMaxLength(256);
 
                     b.Property<string>("LoginProvider")
                         .HasColumnType("TEXT")
